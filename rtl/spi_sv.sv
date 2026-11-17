@@ -17,11 +17,18 @@ module spi_sv
     output wire         wbs_ack_o,
     output wire [31:0]  wbs_dat_o,
 
-    // SPI ports
-    inout wire          sclk_io,
-    inout wire          spi_cs_io,
-    inout wire [3:0]    spi_mosi_io,
-    inout wire [3:0]    spi_miso_io
+    // SPI master ports
+    output wire         sclk_o,
+    output wire         spi_cs_o,
+    input  wire         spi_miso_i,
+    output wire         spi_mosi_o,
+    
+    // SPI slave ports
+    input  wire         spi_cs_i,
+    input  wire         sclk_i,
+    input  wire         spi_mosi_i,
+    output wire         spi_miso_o
+
 );
 
     // common wires
